@@ -1,0 +1,80 @@
+name: UberCommands
+main: me.michaelkrauty.UberCommands.UberCommands
+author: michaelkrauty
+version: 1.0
+commands:
+   ubercommands:
+     description: The root command for UberCommands
+     usage: /ubercommands
+   uber:
+     description: The root command for UberCommands
+     usage: /uber
+   uc:
+     description: The root command for UberCommands
+     usage: /uc
+   u:
+     description: The root command for UberCommands
+     usage: /u
+permissions:
+   ubercommands.use:
+     description: Gives access to all /ubercommands commands
+   ubercommands.vanish:
+     description: Gives access to /ubercommands vanish
+   ubercommands.whoami:
+     description: Gives access to /ubercommands whoami
+   ubercommands.tp:
+     description: Gives access to /ubercommands tp
+   ubercommands.tphere:
+     description: Gives access to /ubercommands tphere
+   ubercommands.heal:
+     description: Gives access to /ubercommands heal
+   ubercommands.feed:
+     description: Gives access to /ubercommands feed
+   ubercommands.starve:
+     description: Gives access to /ubercommands starve
+   ubercommands.ip:
+     description: Gives access to /ubercommands ip
+   ubercommands.ci:
+     description: Gives access to /ubercommands ci
+   ubercommands.slap:
+     description: Gives access to /ubercommands slap
+   ubercommands.creative:
+     description: Gives access to /ubercommands creative
+   ubercommands.creative.others:
+     description: Allows user to set other players' gamemode to creative
+   ubercommands.survival:
+     description: Gives access to /ubercommands survival
+   ubercommands.survival.others:
+     description: Allows user to set other players' gamemode to survival
+   ubercommands.fly:
+     description: Gives access to /ubercommands fly
+   ubercommands.fly.others:
+     decsription: Gives player permission to set other player's flying status
+   ubercommands.kill:
+     description: Gives access to /ubercommands kill
+   ubercommands.trash:
+     description: Gives access to /ubercommands trash
+   ubercommands.arrow:
+     description: Gives access to /ubercommands arrow
+   ubercommands.update:
+     description: Gives access to /ubercommands update
+   ubercommands.latestversion:
+     description: Gives access to /ubercommands latestversion
+   ubercommands.vanish.exempt:
+     description: Exempts player from being hidden
+   ubercommands.vanishall:
+     description: Gives access to /ubercommands vanishall
+   ubercommands.snowball:
+     description: Gives access to /ubercommands snowball
+   ubercommands.locate:
+     description: Gives access to /ubercommands locate
+   ubercommands.locate.exempt:
+     description: Exempts player from being located with /ubercommands locate
+   ubercommands.position:
+     description: Gives access to /ubercommands position
+   ubercommands.notifyonlogin:
+     description: Alerts player on join if an ubercommands update is needed
+   ubercommands.reload:
+     description: Gives access to /ubercommands reload
+   ubercommands.fakeban:
+     description: Gives access to /ubercommands fakeban

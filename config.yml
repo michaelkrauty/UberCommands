@@ -1,0 +1,491 @@
+#Please note that ANY line with : MUST BE SURROUNDED WITH ''
+#Example:
+#BAD: update_needed: version: <version>
+#GOOD: update_needed: 'version: <version>'
+#
+#Please note that ANY line with [] MUST BE SURROUNDED WITH ''
+#Example:
+#BAD: update_needed_line1: [UberCommands] A new version is available: <latestversion>
+#GOOD: update_needed_line1: '[UberCommands] A new version is available: <latestversion>'
+#
+#Please note: If a line is surrounded with '', DO NOT use ' in the string.
+
+#When true, the slapped player will get a fish in their inventory
+#Default: true
+wetfish: true
+
+#When true, players with permission ubercommands.notifyonlogin will be notified if there is a newer version of the plugin available
+#Default: true
+notify_update_on_login: true
+
+#When true, UberCommands will check for updates on startup
+#Default: true
+checkupdate: true
+
+##END OF ACTUAL UBERCOMMANDS CONFIG##
+#With the below, you can modify every message UberCommands will send.
+lang:
+  #Message sent to the player when they don't have the correct permission node
+  #Default: You don't have permission to do that!
+  permission_denied: You dont have permission to do that!
+
+  #Message sent to the player when the targeted player isn't online/doesn't exist
+  #Default: Couldn't find that player!
+  player_not_found: Couldn't find that player!
+
+  #Message sent to the player when they don't supply any arguments (/UberCommands)
+  #Default: Hello there! Use /UberCommands help for a list of commands.
+  no_arguments: Hello there! Use /UberCommands help for a list of commands.
+
+  #Message sent to the player when the command they issued wasn't recognized by UberCommands.
+  #Default: 'Unknown command! Use /UberCommands help for a list of commands!'
+  unknown_command: Unknown command! Use /UberCommands help for a list of commands!
+
+  #Everything that happens when the plugin is enabled
+  on_plugin_enable:
+    #Usable variables: <currentversion>, <latestversion>, <link>
+    #Update is needed
+    #Default: '[UberCommands] A new version is available: <latestversion>'
+    update_needed_line1: '[UberCommands] A new version is available: <latestversion>'
+    #Default: '[UberCommands] Get it from: <link>'
+    update_needed_line2: '[UberCommands] Get it from: <link>'
+    #Update is not needed
+    #Default: [UberCommands] UberCommands is up to date! (Version <version>)
+    update_not_needed: '[UberCommands] UberCommands is up to date! (Version <currentversion>)'
+
+  #/UberCommands update
+  update:
+    #Usable variables: <latestversion>, <currentversion>, <link>
+    #Update needed
+    #Default: A new version of UberCommands is available!
+    update_needed_line1: A new version of UberCommands is available!
+    #Default: You're running UberCommands version <currentversion>. The latest version is <latestversion>.
+    update_needed_line2: You're running UberCommands version <currentversion>. The latest version is <latestversion>.
+    #Default: Get the latest version at <link>
+    update_needed_line3: Get the latest version at <link>
+    #Update not needed
+    #Default: UberCommands is up to date! (Version <currentversion> )
+    update_not_needed: UberCommands is up to date! (Version <currentversion>)
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands update'
+    incorrect_usage: 'Usage: /UberCommands update'
+
+  #/UberCommands reload
+  reload:
+    #Usable variables: <currentversion>
+    #Player message: reloaded
+    #Default: Reloaded UberCommands v<currentversion>.
+    player_message_reloaded: Reloaded UberCommands v<currentversion>.
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands reload'
+    incorrect_usage: 'Usage: /UberCommands reload'
+
+  #/UberCommands latestversion
+  latestversion:
+    #Latest version
+    #Default: 'Latest version: <latestversion>'
+    latest_version: 'Latest version: <latestversion>'
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands latestversion'
+    incorrect_usage: 'Usage: /UberCommands latestversion'
+
+  #/UberCommands vanish
+  vanish:
+    #Usable variables: <playername>, <targetname>
+    #Player was hidden
+    #Default: <targetname> was hidden from you.
+    player_message_hidden: <targetname> was hidden from you.
+    #Player was unhidden
+    #Default: <targetname> became visible again.
+    player_message_unhidden: <targetname> became visible again.
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands vanish <player'
+    incorrect_usage: 'Usage: /UberCommands vanish <player>'
+    #Command executed as console error
+    #Default: You're a console! You can't hide players!
+    executed_as_console_error: You're a console! You can't hide players!
+
+  #/UberCommands friend
+  friend:
+    #Usable variables: <playername>, <targetname>
+    #Target player is now on Player's friends list
+    #Default: <targetname> is now on your friends list!
+    player_message_friended: <targetname> is now on your friends list!
+    #Target player has been removed from Player's friends list
+    #Default: <targetName> has been removed from your friends list!
+    player_message_unfriended: <targetname> has been removed from your friends list!
+    #Command executed as console error
+    #Default: You're a console, you can't have friends! You have to be lonely, and do your job!
+    executed_as_console_error: You're a console, you can't have friends! You have to be lonely, and do your job!
+
+  #/UberCommands vanishall
+  vanishall:
+    #All players hidden from Player
+    #Default: All other players have been hidden from you!
+    players_have_been_hidden: All other players have been hidden from you!
+    #All players have been shown to Player
+    #Default: All other players have been revealed to you!
+    players_have_been_unhidden: All other players have been revealed to you!
+    #Command executed as console error
+    #Default: You're a console, you can't hide players! That would just be irresponsable!
+    executed_as_console_error: You're a console, you can't hide players! That would just be irresponsable!
+
+  #/UberCommands whoami
+  whoami:
+    #Usable variables: <playername>
+    #What's your name?
+    #Default: Your name is <playername>
+    player_message_whoami_line1: Your name is <playername>
+    #Line 2
+    #Default: What, did you forget it or something?
+    player_message_whoami_line2: What, did you forget it or something?
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands whoami'
+    incorrect_usage: 'Usage: /UberCommands whoami'
+    #Command executed as console error
+    #Default: You're a console! Can't you remember that?
+    executed_as_console_error: You're a console! Can't you remember that?
+
+  #/UberCommands tp
+  tp:
+    #Usable variables: <targetname>, <playername>
+    #Player message: Teleported
+    #Default: Teleported to <targetname>.
+    player_message: Teleported to <targetname>.
+    #Target message: Teleported
+    #Default: <playername> teleported to you.
+    target_message: <playername> teleported to you.
+    #Command executed as console error
+    #Default: You're a console, you can't teleport!
+    executed_as_console_error: You're a console, you can't teleport!
+
+  #/UberCommands tphere
+  tphere:
+    #Usable variables: <targetname>, <playername>
+    #Player message: Teleported
+    #Default: Teleported <targetname> to your location.
+    player_message: Teleported <targetname> to your location.
+    #Target message: Teleported
+    #Default: <playername> teleported you to them.
+    target_message: <playername> teleported you to them.
+    #Incorrect command usage
+    #Default: 'Usage: /tphere <player'
+    incorrect_usage: 'Usage: /tphere <player>'
+    #Command executed as console error
+    #Default: You're a console, you can't teleport players!
+    executed_as_console_error: You're a console, you can't teleport players!
+
+  #/UberCommands heal
+  heal:
+    #Usable variables: <targetname>, <playername>
+    #Player message: Healed self
+    #Default: You healed yourself!
+    player_message_healed_self: You healed yourself!
+    #Player message: Healed player
+    #Default: <targetname> was healed!
+    player_message_healed_player: <targetname> was healed!
+    #Target message: Healed
+    #Default: You were healed by <playername>
+    target_message_healed: You were healed by <playername>
+    #Command executed as console error
+    #Default: You're a console! You don't have health!
+    executed_as_console_error: You're a console! You don't have health!
+    #Target message: Healed by console
+    #Default: You were healed by the console!
+    target_message_healed_by_console: You were healed by the console!
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands heal [player]'
+    incorrect_usage: 'Usage: /UberCommands heal [player]'
+
+  #/UberCommands feed
+  feed:
+    #Usable variables: <targetname>, <playername>
+    #Player message: fed self
+    #Default: You injected yourself with nutrients.
+    player_message_fed_self: You injected yourself with nutrients.
+    #Player message: fed player
+    #Default: Injected <targetname> with nutrients.
+    player_message_fed_player: Injected <targetname> with nutrients.
+    #Target message: fed
+    #Default: <playername> injected you with nutrients.
+    target_message_fed: <playername> injected you with nutrients.
+    #Command executed as console error
+    #Default: You're a console, you don't need food!
+    executed_as_console_error: You're a console, you don't need food!
+    #Target message: fed by console
+    #Default: You were fed by the console!
+    target_message_fed_by_console: You were fed by the console!
+    #Incorrect command usage
+    #Default: 'Usage: /feed [player]'
+    incorrect_usage: 'Usage: /feed [player]'
+
+  #/UberCommands starve
+  starve:
+    #Usable variables: <targetname>, <playername>
+    #Player message: starved self
+    #Default: You could use a nice steak right about now...
+    player_message_starved_self: You could use a nice steak right about now...
+    #Player message: starved player
+    #Default: Burned a hole in <targetname>'s stomach.
+    player_message_starved_player: Burned a hole in <targetname>'s stomach.
+    #Target message: starved
+    #Default: <playername> burned a hole in your stomach!
+    target_message_starved: <playername> burned a hole in your stomach!
+    #Command executed as console error
+    #Default: You're a console, you don't have a stomach!
+    executed_as_console_error: You're a console, you don't have a stomach!
+    #Target message: starved by console
+    #Default: The console burned a hole in your stomach!
+    target_message_starved_by_console: The console burned a hole in your stomach!
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands starve <player>'
+    incorrect_usage: 'Usage: /UberCommands starve <player>'
+
+  #/UberCommands ip
+  ip:
+    #Usable variables: <targetname>, <playername>, <player_ip>, <target_ip>
+    #Player message: ip self
+    #Default: 'Your IP address is: <player_ip>'
+    player_message_ip_self: 'Your IP address is: <player_ip>'
+    #Player message: ip player
+    #Default: '<targetname>s IP address is: <target_ip>'
+    player_message_ip_player: '<targetname>s IP address is: <target_ip>'
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands ip [player]'
+    incorrect_usage: 'Usage: /UberCommands ip [player]'
+    #Command executed as console error
+    #Default: 'You're a console, you should know your own IP address :P'
+    executed_as_console_error: 'You are a console, you should know your own IP address :P'
+    #Incorrect command usage as console
+    #Default: 'Usage: /UberCommands ip <player>'
+    incorrect_usage_console: 'Usage: /UberCommands ip <player>'
+
+  #/UberCommands ci
+  clearinventory:
+    #Usable variables: <targetname>, <playername>
+    #Player message: clearinventory self
+    #Default: 'Your inventory was cleared! :)'
+    player_message_clearinventory_self: 'Your inventory was cleared! :)'
+    #Player message: clearinventory player
+    #Default: 'Cleared <targetname>'s inventory.'
+    player_message_clearinventory_player: Cleared <targetname>'s inventory.
+    #Target message: clearinventory
+    #Default: Your inventory was cleared.
+    target_message_clearinventory: Your inventory was cleared.
+    #Incorrect command usage
+    #Default: 'Usage /UberCommands ci [player]'
+    incorrect_usage: 'Usage: /UberCommands ci [player]'
+    #Command executed as console error
+    #Default: 'You're a console, you don't have an inventory!'
+    executed_as_console_error: You're a console, you don't have an inventory!
+    #Incorrect command usage as console
+    #Default: 'Usage: /UberCommands ci <player>'
+    incorrect_usage_console: 'Usage: /UberCommands ci <player>'
+
+  #/UberCommands slap
+  slap:
+    #Usable variables: <targetname>, <playername>
+    #Player message: slap player
+    #Default: Slapped <targetname> with a wet fish.
+    player_message_slap_player: Slapped <targetname> with a wet fish.
+    #Target message: slap
+    #Default: '<playername> slapped you with a wet fish! :O'
+    target_message_slap: '<playername> slapped you with a wet fish! :O'
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands slap <player>'
+    incorrect_usage: 'Usage: /UberCommands slap <player>'
+    #Target message: slapped by console
+    #Default: 'The console slapped you with a wet fish! :O'
+    target_message_slapped_by_console: 'The console slapped you with a wet fish! :O'
+
+  #/UberCommands creative
+  creative:
+    #Usable variables: <targetname>, <playername>
+    #Player message: already in creative mode
+    #Default: 'You're already in creative mode! Silly goose.'
+    player_message_already_in_creative: You're already in creative! Silly goose.
+    #Player message: gamemode creative
+    #Default: 'Your gamemode is now creative :)'
+    player_message_gamemode_creative: 'Your gamemode is now creative :)'
+    #Player message: player already in creative
+    #Default: <targetname> is already in creative mode!
+    player_message_player_already_in_creative: <targetname> is already in creative mode!
+    #Player message: gamemode creative player
+    #Default: <targetname> is now in creative mode!
+    player_message_gamemode_creative_player: <targetname> is now in creative mode!
+    #Target message: gamemode creative
+    #Default: 'You're now in creative mode!'
+    target_message_gamemode_creative: You're now in creative mode!
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands creative [player]'
+    incorrect_usage: 'Usage: /UberCommands creative [player]'
+    #Command executed as console error
+    #Default: 'You're a console, you can't have creative mode!'
+    executed_as_console_error: You're a console, you can't have creative mode!
+    #Incorrect command usage as console
+    #Default: 'Usage: /UberCommands creative <player>'
+    incorrect_usage_console: 'Usage: /UberCommands creative <player>'
+
+    #/UberCommands survival
+  survival:
+    #Usable variables: <targetname>, <playername>
+    #Player message: already in survival
+    #Default: 'You're already in survival mode! Silly goose.'
+    player_message_already_in_survival: You're already in survival mode! Silly goose.
+    #Player message: gamemode survival
+    #Default: 'Your gamemode is now survival :)'
+    player_message_gamemode_survival: 'Your gamemode is now survival :)'
+    #Player message: player already in survival
+    #Default: <targetname> is already in survival!
+    player_message_player_already_in_survival: <targetname> is already in survival!
+    #Player message: gamemode survival player
+    #Default: <targetname> is now in survival mode!
+    player_message_gamemode_survival_player: <targetname> is now in survival mode!
+    #Target message:
+    #Default: 'You're now in creative mode!'
+    target_message_gamemode_survival: You're now in creative mode!
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands survival [player]'
+    incorrect_usage: 'Usage: /UberCommands survival [player]'
+    #Command executed as console error
+    #Default: 'You're a console, you can't have survival mode!'
+    executed_as_console_error: You're a console, you can't have survival mode!
+    #Incorrect command usage as console
+    #Default: 'Usage: /UberCommands survival <player'
+    incorrect_usage_console: 'Usage: /UberCommands survival <player>'
+
+  #/UberCommands fly
+  fly:
+    #Usable variables: <targetname>, <playername>
+    #Player message: fly
+    #Default: You can now fly!
+    player_message_fly: You can now fly!
+    #Player message: fly disabled
+    #Default: 'You can't fly anymore!'
+    player_message_fly_disabled: You can't fly anymore!
+    #Player message: fly player
+    #Default: <targetname> can now fly!
+    player_message_fly_player: <targetname> can now fly!
+    #Player message: fly player disabled
+    #Default: '<targetname> can't fly anymore!'
+    player_message_fly_player_disabled: <targetname> can't fly anymore!
+    #Target message: fly
+    #Default: You can now fly!
+    target_message_fly: You can now fly!
+    #Target message: fly disabled
+    #Default: 'You can't fly anymore!'
+    target_message_fly_disabled: You can't fly anymore!
+    #Incorrect command usage
+    #Default: 'Usage: /UberCommands fly [player]'
+    incorrect_usage: 'Usage: /UberCommands fly [player]'
+    #Command executed as console error
+    #Default: 'You're a console, you can't fly!'
+    executed_as_console_error: You're a console, you can't fly!
+    #Incorrect command usage as console
+    #Default: 'Usage: /UberCommands fly <player>'
+    incorrect_usage_console: 'Usage: /UberCommands fly <player>'
+
+  #/UberCommands kill
+  kill:
+    #Usable variables: <targetname>, <playername>
+    #Player message: kill
+    #Default: You tripped and fell.
+    player_message_kill: You tripped and fell.
+    #Player message: kill player
+    #Default: Killed <targetname.
+    player_message_kill_player: Killed <targetname>.
+    #Incorrect usage
+    #Default: 'Usage: /UberCommands kill [player]'
+    incorrect_usage: 'Usage: /UberCommands kill [player]'
+    #Player message: kill console
+    #Default: 'You can't kill yourself! (Suicide is not the answer!)'
+    player_message_kill_console: You can't kill yourself! (Suicide is not the answer!)
+    #Incorrect command usage as console
+    #Default: 'Usage: /UberCommands kill <player>'
+    incorrect_usage_console: 'Usage: /UberCommands kill <player>'
+
+  #/UberCommands trash
+  trash:
+    #Usable variables: <playername>
+    #Player message: trash
+    #Default: Disposed of the item in your hand.
+    player_message_trash: Disposed of the item in your hand.
+    #Incorrect usage
+    #Default: 'Usage: /trash'
+    incorrect_usage: 'Usage: /trash'
+    #Command executed as console error
+    #Default: 'You're a console, you don't have an item to trash!'
+    executed_as_console_error: You're a console, you don't have an item to trash!
+
+  #/UberCommands arrow
+  arrow:
+    #Usable variables: <playername>
+    #Player message: arrow
+    #Default: Pew pew pew!
+    player_message_arrow: Pew pew pew!
+    #Incorrect usage
+    #Default: 'Usage: /arrow'
+    incorrect_usage: 'Usage: /arrow'
+    #Command executed as console error
+    #Default: 'You're a console, you can't shoot arrows!'
+    executed_as_console_error: You're a console, you can't shoot arrows!
+
+  #/UberCommands snowball
+  snowball:
+    #Usable variables: <playername>
+    #Player message: snowball
+    #Default: 'Snowball fight! :D'
+    player_message_snowball: 'Snowball fight! :D'
+    #Incorrect usage
+    #Default: 'Usage: /snowball'
+    incorrect_usage: 'Usage: /snowball'
+    #Command executed as console error
+    #Default: 'You're a console, you can't throw snowballs!'
+    executed_as_console_error: You're a console, you can't throw snowballs!
+
+  #/UberCommands location
+  location:
+    #Usable variables: <playername>, <targetname>, <x>, <y>, <z>, <world>
+    #Player message: location line1
+    #Default: '<targetname>s location:'
+    player_message_location_line1: '<targetname>s location:'
+    #Player message: location line2
+    #Default: 'X: <x>'
+    player_message_location_line2: 'X: <x>'
+    #Player message: location line3
+    #Default: 'Y: <y>'
+    player_message_location_line3: 'Y: <y>'
+    #Player message: location line4
+    #Default: 'Z: <z>'
+    player_message_location_line4: 'Z: <z>'
+    #Player message: location line5
+    #Default: 'World: <world>'
+    player_message_location_line5: 'World: <world>'
+    #Incorrect usage
+    #Default: 'Udage: /UberCommands locate <player>'
+    incorrect_usage: 'Usage: /UberCommands locate <player>'
+
+  #/UberCommands position
+  position:
+    #Usable variables: <playername>, <x>, <y>, <z>, <world>
+    #Player message: position line1
+    #Default: 'Your location:
+    player_message_position_line1: 'Your location:'
+    #Player message: position line2
+    #Default: 'X: <x>'
+    player_message_position_line2: 'X: <x>'
+    #Player message: position line3
+    #Default: 'X:<x>'
+    player_message_position_line3: 'Y: <y>'
+    #Player message: position line4
+    #Default: 'Z: <z>'
+    player_message_position_line4: 'Z: <z>'
+    #Player message: position line5
+    #Default: 'World: <world>'
+    player_message_position_line5: 'World: <world>'
+    #Incorrect usage
+    #Default: 'Usage: /UberCommands position'
+    incorrect_usage: 'Usage: /UberCommands position'
+    #Command executed as console error
+    #Default: 'You're a console, you're not even 3-dimensionsal!'
+    executed_as_console_error: You're a console, you're not even 3-dimensional!
